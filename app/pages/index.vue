@@ -30,8 +30,5 @@
       <button @click="navigate" id="goButton">Go</button>
     </div>
     <small>You can also see if an Ethereum address has an<br/>ENS name connected to it by pasting it here.</small>
-    <footer style="margin-top: 15px;">
-      Created by <a href="https://littlebit670.link">LittleBit</a><br/>
-      Uses a public ENS API: <a href="https://enstate.rs">enstate.rs</a>
-    </footer>
+    <MainFooter/>
 </template>

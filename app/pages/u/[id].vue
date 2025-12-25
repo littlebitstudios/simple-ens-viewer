@@ -76,10 +76,7 @@ useSeoMeta({
     <span v-if="ensData.chains.cardano">
         <AddressCard chainName="Cardano" :address="ensData.chains.cardano" icon-url="https://cardano.org/img/brand-assets/cardano-starburst-white.svg" />
     </span>
+    <MainFooter/>
   </div>
   <p v-else>Loading ENS data...</p>
-  <footer style="margin-top: 15px;">
-      <p>Created by <a href="https://littlebit670.link">LittleBit</a> | <a href="https://github.com/littlebitstudios/simple-ens-resolver">View project on GitHub</a></p>
-      <p>Uses a public ENS API: <a href="https://enstate.rs">enstate.rs</a></p>
-  </footer>
 </template>
