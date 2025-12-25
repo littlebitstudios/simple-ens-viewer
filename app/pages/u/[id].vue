@@ -76,7 +76,7 @@ useSeoMeta({
     <span v-if="ensData.chains.cardano">
         <AddressCard chainName="Cardano" :address="ensData.chains.cardano" icon-url="https://cardano.org/img/brand-assets/cardano-starburst-white.svg" />
     </span>
-    <MainFooter/>
   </div>
   <p v-else>Loading ENS data...</p>
+  <MainFooter/>
 </template>
