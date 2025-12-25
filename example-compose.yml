@@ -1,0 +1,7 @@
+services:
+  main:
+    image: ghcr.io/littlebitstudios/simple-ens-viewer:latest
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    container_name: simple-ens-viewer
