@@ -1,6 +1,16 @@
 <script setup>
   import { ref } from 'vue'
 
+  useSeoMeta({
+    title: "Simple ENS Viewer",
+    ogTitle: "Simple ENS Viewer",
+    ogUrl:"https://ensr.littlebitstudios.com",
+    twitterSite:"littlebit670",
+    ogType:"website",
+    ogDescription:"A Nuxt-based website that shows quick information from ENS profiles",
+    twitterCard:"summary",
+  })
+
   const nameToView = ref('')
 
   const navigate = () => {

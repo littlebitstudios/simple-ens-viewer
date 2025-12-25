@@ -32,6 +32,17 @@ onMounted(async () => {
     console.error("Fetch failed:", error)
   }
 })
+
+useSeoMeta({
+    title: userId,
+    titleTemplate:"%s | Simple ENS Viewer",
+    ogTitle: `${userId} | Simple ENS Viewer`,
+    ogUrl:"https://ensr.littlebitstudios.com",
+    twitterSite:"littlebit670",
+    ogType:"website",
+    ogDescription:"A Nuxt-based website that shows quick information from ENS profiles",
+    twitterCard:"summary",
+})
 </script>
 
 <template>
