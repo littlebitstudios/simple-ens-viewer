@@ -56,26 +56,33 @@ useSeoMeta({
     </div>
   </div>
   <div v-else-if="ensData" style="display:flex; flex-direction:column; align-items: center; max-width: 100%;">
-    <ProfileCard style="margin-bottom:15px; margin-top:15px;" :display-name="ensData.records.name || ensData.name" :user-id="`${ensData.name}`" :profile-pic-url="ensData.records.avatar" :description="ensData.records.description" />
-    <AddressCard chainName="Ethereum" :address="ensData.address" icon-url="https://cryptologos.cc/logos/versions/ethereum-eth-logo-diamond-purple.svg" />
-    <div v-if="ensData.name.endsWith('.base.eth')" style="max-width:330px; margin-bottom:15px">
-        <small>That's a Basename! It's recommended to send to these names on the Base chain.</small>
+    <ProfileCard style="margin-bottom:15px; margin-top:15px;" :display-name="ensData.records.name || ensData.name" :user-id="`${ensData.name}`" :profile-pic-url="ensData.records.avatar" :description="ensData.records.description || '[no description]'" />
+    <div v-if="ensData.address">
+      <AddressCard chainName="Ethereum" :address="ensData.address" icon-url="https://cryptologos.cc/logos/versions/ethereum-eth-logo-diamond-purple.svg" />
+      <div v-if="ensData.name.endsWith('.base.eth')" style="max-width:330px; margin-bottom:15px">
+          <small>That's a Basename! It's recommended to send to these names on the Base chain.</small>
+      </div>
+      <div v-else-if="ensData.name.endsWith('.brnr.eth')" style="max-width:340px; margin-bottom:15px">
+          <small>That's a Burner card user! Burner cards only support Ethereum, Base, Arbitrum, and Optimism chains.</small>
+      </div>
+      <div v-else style="max-width:330px; margin-bottom:15px">
+          <small>The Ethereum address can be used for other EVM chains like Base and Polygon.</small>
+      </div>
+      <span v-if="ensData.chains.sol">
+          <AddressCard chainName="Solana" :address="ensData.chains.sol" icon-url="https://cryptologos.cc/logos/solana-sol-logo.svg" />
+      </span>
+      <span v-if="ensData.chains.btc">
+          <AddressCard chainName="Bitcoin" :address="ensData.chains.btc" icon-url="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" />
+      </span>
+      <span v-if="ensData.chains.cardano">
+          <AddressCard chainName="Cardano" :address="ensData.chains.cardano" icon-url="https://cardano.org/img/brand-assets/cardano-starburst-white.svg" />
+      </span>
     </div>
-    <div v-else-if="ensData.name.endsWith('.brnr.eth')" style="max-width:340px; margin-bottom:15px">
-        <small>That's a Burner card user! Burner cards only support Ethereum, Base, Arbitrum, and Optimism chains.</small>
+    <div v-else style="max-width: 380px;">
+      <p>
+        <b>Something's wrong and that ENS name didn't return an address!</b> You might find the address by clicking "View on..." above.
+      </p>
     </div>
-    <div v-else style="max-width:330px; margin-bottom:15px">
-        <small>The Ethereum address can be used for other EVM chains like Base and Polygon.</small>
-    </div>
-    <span v-if="ensData.chains.sol">
-        <AddressCard chainName="Solana" :address="ensData.chains.sol" icon-url="https://cryptologos.cc/logos/solana-sol-logo.svg" />
-    </span>
-    <span v-if="ensData.chains.btc">
-        <AddressCard chainName="Bitcoin" :address="ensData.chains.btc" icon-url="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" />
-    </span>
-    <span v-if="ensData.chains.cardano">
-        <AddressCard chainName="Cardano" :address="ensData.chains.cardano" icon-url="https://cardano.org/img/brand-assets/cardano-starburst-white.svg" />
-    </span>
   </div>
   <p v-else>Loading ENS data...</p>
   <MainFooter/>
