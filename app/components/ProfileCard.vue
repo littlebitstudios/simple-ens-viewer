@@ -46,7 +46,7 @@ const props = defineProps({
     padding-bottom: 1rem;
     width: 355px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    font-family: sans-serif;
+    font-family: InterDisplay, Inter, sans-serif;
     /* Ensures the bio and everything else stays centered if desired */
     text-align: center;
 }
