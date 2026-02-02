@@ -56,7 +56,8 @@ useSeoMeta({
     </div>
   </div>
   <div v-else-if="ensData" style="display:flex; flex-direction:column; align-items: center; max-width: 100%;">
-    <ProfileCard style="margin-bottom:15px; margin-top:15px;" :display-name="ensData.records.name || ensData.name" :user-id="`${ensData.name}`" :profile-pic-url="ensData.records.avatar" :description="ensData.records.description || '[no description]'" />
+    <ProfileCard style="margin-bottom:15px; margin-top:15px;" :display-name="ensData.records.name || ensData.name" :user-id="`${ensData.name}`" :profile-pic-url="ensData.records.avatar" :description="ensData.records.description || '[no description]'" :content-hash-exists="Boolean(ensData.contenthash || ensData.errors.contenthash)" />
+    <DWebsiteCard v-if="Boolean(ensData.contenthash || ensData.errors.contenthash)" :user-id="userId" />
     <div id="addresses" v-if="ensData.address">
       <AddressCard chainName="Ethereum" :address="ensData.address" icon-url="https://cryptologos.cc/logos/versions/ethereum-eth-logo-diamond-purple.svg" />
       <div v-if="ensData.name.endsWith('.base.eth')" style="max-width:330px; margin-bottom:15px">
