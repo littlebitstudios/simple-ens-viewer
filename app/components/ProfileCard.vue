@@ -77,14 +77,14 @@ const props = defineProps({
 }
 
 h3 {
-    font-family: InterVariable, Inter, sans-serif;
+    font-family: InterDisplay, Inter, sans-serif;
     margin: 0;
     font-size: 1.2rem;
     color: white;
 }
 
 .user-id {
-    font-family: InterVariable, Inter, sans-serif;
+    font-family: InterDisplay, Inter, sans-serif;
     color: cyan;
     font-size: 0.85rem;
     font-weight: 500;
@@ -92,7 +92,7 @@ h3 {
 }
 
 .bio {
-    font-family: InterVariable, Inter, sans-serif;
+    font-family: InterDisplay, Inter, sans-serif;
     font-size: 0.9rem;
     line-height: 1.5;
     color: #ccc;
@@ -106,7 +106,7 @@ a.button {
     padding: 5px 10px;
     text-decoration: none;
     border: none;
-    font-family: InterVariable, Inter, sans-serif;
+    font-family: InterDisplay, Inter, sans-serif;
     font-size: 16px;
     margin: 10px;
     border-radius: 10px;
