@@ -31,7 +31,7 @@ const props = defineProps({
 
         <p v-if="description" class="bio">{{ description }}</p>
         <a class="button" v-if="userId.endsWith('.base.eth')" :href="`https://base.org/names/${userId.split('.')[0]}`">View on Basenames</a>
-        <a class="button" v-else-if="userId.endsWith('.eth')" :href="`https://app.ens.domains/${userId}`">View on ENS Web App</a>
+        <a class="button" v-else :href="`https://app.ens.domains/${userId}`">View on ENS Web App</a>
     </div>
 </template>
 
