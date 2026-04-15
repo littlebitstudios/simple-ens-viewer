@@ -59,7 +59,7 @@ useSeoMeta({
     <ProfileCard style="margin-bottom:15px; margin-top:15px;" :display-name="ensData.records.name || ensData.name" :user-id="`${ensData.name}`" :profile-pic-url="ensData.records.avatar" :description="ensData.records.description || '[no description]'" :content-hash-exists="Boolean(ensData.contenthash || ensData.errors.contenthash)" />
     <DWebsiteCard v-if="Boolean(ensData.contenthash || ensData.errors.contenthash)" :user-id="userId" />
     <div id="addresses" v-if="ensData.address">
-      <AddressCard chainName="Ethereum" :address="ensData.address" icon-url="https://cryptologos.cc/logos/versions/ethereum-eth-logo-diamond-purple.svg" />
+      <AddressCard chainName="Ethereum" :address="ensData.address" icon-url="https://ipfs.io/ipfs/QmdUfnzwFMSdWhCf4soHHLj5cnHE6YVFf2hkdftETDVQGw" />
       <div v-if="ensData.name.endsWith('.base.eth')" style="max-width:330px; margin-bottom:15px">
           <small>That's a Basename! It's recommended to send to these names on the Base chain.</small>
       </div>
@@ -73,13 +73,13 @@ useSeoMeta({
           <small>The Ethereum address can be used for other EVM chains like Base and Polygon.</small>
       </div>
       <span v-if="ensData.chains.sol">
-          <AddressCard chainName="Solana" :address="ensData.chains.sol" icon-url="https://cryptologos.cc/logos/solana-sol-logo.svg" />
+          <AddressCard chainName="Solana" :address="ensData.chains.sol" icon-url="https://ipfs.io/ipfs/Qmcb2sKssnrAUTuJZmnrCtDvxkBjy4jbtTJb84Q5yedzSD" />
       </span>
       <span v-if="ensData.chains.btc">
-          <AddressCard chainName="Bitcoin" :address="ensData.chains.btc" icon-url="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" />
+          <AddressCard chainName="Bitcoin" :address="ensData.chains.btc" icon-url="https://ipfs.io/ipfs/QmSw5N3D2ZrM3nvRC21DHn1SKyT3qA3CUi5cJQmAzv8SFd" />
       </span>
       <span v-if="ensData.chains.cardano">
-          <AddressCard chainName="Cardano" :address="ensData.chains.cardano" icon-url="https://cardano.org/img/brand-assets/cardano-starburst-white.svg" />
+          <AddressCard chainName="Cardano" :address="ensData.chains.cardano" icon-url="https://ipfs.io/ipfs/QmYY1K2aHQ68hbohQugXQpWdNZba8NuMAocdKNXGWHrNRJ" />
       </span>
     </div>
     <div v-else style="max-width: 380px;">
