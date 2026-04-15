@@ -49,7 +49,7 @@ useSeoMeta({
   <div v-if="ensDataStatusCode==404">
     <div v-if="userId.startsWith('0x')" style="display:flex; flex-direction:column; align-items: center; max-width: 100%;">
         <p style="width: 300px">It appears that the Ethereum address you gave has no ENS name.</p>
-        <AddressCard chainName="Ethereum" :address="userId" icon-url="https://cryptologos.cc/logos/versions/ethereum-eth-logo-diamond-purple.svg" />
+        <AddressCard chainName="Ethereum" :address="userId" icon-url="https://ipfs.io/ipfs/QmdUfnzwFMSdWhCf4soHHLj5cnHE6YVFf2hkdftETDVQGw" />
     </div>
     <div v-else>
       <p>It appears that that ENS name does not exist.</p>
